@@ -17,9 +17,9 @@ def busqueda(request,buscado):
     result = []
     data = contenidos.find({ "$text": { "$search": buscado } } )
     for dto in data:
-    	jsonData = {
+        jsonData = {
             'id': str(dto['_id']),
-            "nombre": dto['nombre'],
+            'nombre': dto['nombre'],
             'autor': dto['autor'],
             'anio': dto['anio'],
             'edicion':dto['edicion'],
