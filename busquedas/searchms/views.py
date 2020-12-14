@@ -24,7 +24,7 @@ def busqueda(request,buscado):
             'anio': dto['anio'],
             'edicion':dto['edicion'],
             'cuerpo':dto['cuerpo']
-         }
+        }
         result.append(jsonData)
     client.close()
     return JsonResponse(result, safe=False)
