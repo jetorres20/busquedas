@@ -11,7 +11,7 @@ from bson.objectid import ObjectId
 # Create your views here.
 @api_view(["GET"])
 def busqueda(request):
-    client = MongoClient(settings.MONGO_CLI)
+    client = pymongo.MongoClient(settings.MONGO_CLI)
     db = client.booklick
     contenidos = db['contenidos']
     result = []
