@@ -10,13 +10,13 @@ from bson.objectid import ObjectId
 
 # Create your views here.
 @api_view(["GET"])
-def contenidos(request):
+def busqueda(request):
     client = MongoClient(settings.MONGO_CLI)
     db = client.booklick
     contenidos = db['contenidos']
     result = []
     buscado=input("Ingrese el titulo o el autor del documento")
-    data = contenidos.find({ $text: { $search: buscado } } )
+    data = contenidos.find({ "$text": { "$search": buscado } } )
     for dto in data:
         jsonData = {
             'id': str(dto['_id']),
