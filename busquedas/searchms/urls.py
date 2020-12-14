@@ -3,6 +3,6 @@ from django.conf.urls import url, include
 from .views import *
 
 urlpatterns =[
-    url(r'^busqueda/<str:buscado>/$', busqueda),
+    url(r'^busqueda/(?P<buscado>\D+)/$', busqueda),
 
 ]
