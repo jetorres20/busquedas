@@ -20,8 +20,8 @@ def busqueda(request):
     for dto in data:
         jsonData = {
             'id': str(dto['_id']),
-            "nombre": dto['variable'],
-            'autor': dto['threshold'],
+            "nombre": dto['nombre'],
+            'autor': dto['autor'],
             'anio': dto['anio'],
             'edicion':dto['edicion'],
             'cuerpo':dto['cuerpo']
